@@ -22,9 +22,10 @@ var restaurantData = [
 
 io.on('connection', function(socket){
   socket.on('restaurant-service', function(data){
-    if ('philz coffee'.match(data.toLowerCase())) {
-      io.emit('restaurant-data', restaurantData);
-    }
+    var filteredData = restaurantData.filter(function(ele) {
+      return ele.name.toLowerCase().match(data.toLowerCase()) ? true : false;
+    });
+    io.emit('restaurant-data', filteredData);
   });
 });
 
