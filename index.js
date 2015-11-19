@@ -4,22 +4,19 @@ var io = require('socket.io')(http);
 
 var restaurantData = [
   {
-    title: 'Philz Coffee Sunnyvale',
+    name: 'Philz Coffee Sunnyvale',
+    location: '41.2625819, -75.5749512',
     distance: '5 minutes driving',
-    crowded: 'Crowded - 25 minutes to get your order',
-    dataset: {
-      url: 'http://www.philzcoffee.com'
-    },
-    label: 'Philz Coffee Sunnyvale'
+    crowded: true,
+    estimatedWaitTime: '25 minutes',
+    url: 'http://www.philzcoffee.com'
   },
   {
-    title: 'Philz Coffee Cupertino',
+    name: 'Philz Coffee Cupertino',
+    location: '41.2625819, -75.5749512',
     distance: '10 minutes driving',
-    crowded: 'No line - Ready to serve',
-    dataset: {
-      url: 'http://www.philzcoffee.com'
-    },
-    label: 'Philz Coffee Cupertino'
+    crowded: false,
+    url: 'http://www.philzcoffee.com'
   }
 ];
 
